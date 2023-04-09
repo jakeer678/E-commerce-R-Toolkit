@@ -13,7 +13,7 @@ const Cart = (props) => {
       <ul>
         {listItems.map((item) => (
           <CartItem
-            key={item.id}
+          key={item.id}
             item={{
               title: item.title,
               quantity: item.quantity,
