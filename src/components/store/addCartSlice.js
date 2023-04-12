@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const addCartSlice = createSlice({
   name: "cartItems",
   initialState: { items: [], totalQauntity: 0 },
   reducers: {
+
     addToCart(state, action) {
       //   state.items = [...state.action.payload];
       //  const item = state.items.push(action.payload);
@@ -36,8 +38,13 @@ const addCartSlice = createSlice({
         existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
       }
     },
+    replaceCart(state,action) {
+      state.totalQauntity = action.payload.totalQauntity;
+      state.items =action.payload.items
+    }
   },
 });
+
 
 export const addCartSliceActions = addCartSlice.actions;
 export default addCartSlice;
